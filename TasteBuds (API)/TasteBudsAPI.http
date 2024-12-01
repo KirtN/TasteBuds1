@@ -1,0 +1,45 @@
+﻿@TasteBudsAPI_HostAddress = https://localhost:7067
+
+
+POST {{TasteBudsAPI_HostAddress}}/recipe?recipe_id=38&recipe_name=test&recipe_link=testlink&cook_time=3min&is_Vegan=0&is_Vegetarian=0&is_GlutenFree=0&nutritional_facts=testfacts&portion_size=3
+###
+
+DELETE {{TasteBudsAPI_HostAddress}}/recipe/38
+
+
+###
+GET {{TasteBudsAPI_HostAddress}}/User
+
+###
+
+GET {{TasteBudsAPI_HostAddress}}/ingredient
+
+###
+
+GET {{TasteBudsAPI_HostAddress}}/recipe
+
+###
+
+GET {{TasteBudsAPI_HostAddress}}/Shopping_cart
+
+###
+
+GET {{TasteBudsAPI_HostAddress}}/Favourite_recipes
+
+###
+
+GET {{TasteBudsAPI_HostAddress}}/Recipe_Ingredient_Junction
+
+###
+
+GET {{TasteBudsAPI_HostAddress}}/Pantry
+
+###
+
+@user_id=1
+@ingredient_id=2
+@quantity=100
+@measurement='ml'
+PUT {{TasteBudsAPI_HostAddress}}/pantry?user_id={{user_id}}&ingredient_id={{ingredient_id}}&quantity={{quantity}}&measurement={{measurement}}
+
+###

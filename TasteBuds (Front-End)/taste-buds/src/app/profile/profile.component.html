@@ -1,0 +1,56 @@
+<div class="background" id="background">
+    <div class="login" id="loginPage">
+        <form>
+            <div class="formgroup">
+                <!-- <label for="usernameInput">Username</label> -->
+                <input type="text" class="form-control" id="usernameInput" placeholder="Username" (keyup.enter)="login()">
+            </div>
+            <div class="formgroup">
+                <!-- <label for="passwordInput">Password</label> -->
+                <input type="password" class="form-control" id="passwordInput" placeholder="Password" (keyup.enter)="login()">
+            </div>
+        </form>
+        <div class="incorrect" id="incorrectLogin">
+            Incorrect login. Please try again.
+        </div>
+        <button type="loginButton" class="btn btn-dark" (click)="login()">Login</button>
+        <button class="btn btn-dark" (click)="loadRegisterPage()">Create Account</button>
+    </div>
+    <div class="register" id="registerPage">
+        <div class="back">
+            <div class="bk-button" (click)="backToLogin()">
+                <span class="material-icons">arrow_back_ios</span>
+            </div>
+        </div>
+        <form>
+            <div class="formgroup">
+                <input type="text" class="form-control" id="firstnameInputRegister" placeholder="First Name" (keyup.enter)="register()">
+            </div>
+            <div class="formgroup">
+                <input type="text" class="form-control" id="lastnameInputRegister" placeholder="Last Name" (keyup.enter)="register()">
+            </div>
+            <div class="formgroup">
+                <input type="email" class="form-control" id="emailInputRegister" placeholder="Email" (keyup.enter)="register()">
+            </div>
+            <div class="formgroup">
+                <input type="text" class="form-control" id="usernameInputRegister" placeholder="Username" (keyup.enter)="register()">
+            </div>
+            <div class="formgroup">
+                <input type="password" class="form-control" id="passwordInputRegister" placeholder="Password" (keyup.enter)="register()">
+            </div>
+        </form>
+        <div class="incorrect" id="incorrectRegister">
+            One or more fields are invalid.
+        </div>
+        <button class="btn btn-dark" (click)="register()">Register</button>
+    </div>
+    <div class="welcome" id="welcomePage">
+        <div class="info">
+            <div class="uname" id="usernameInfo"></div>
+            <div class="fname" id="fnameInfo"></div>
+            <div class="lname" id="lnameInfo"></div>
+            <div class="email" id="emailInfo"></div>
+        </div>
+    </div>
+
+</div>

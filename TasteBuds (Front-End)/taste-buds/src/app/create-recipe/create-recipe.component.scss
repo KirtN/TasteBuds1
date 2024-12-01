@@ -1,0 +1,14 @@
+@use '@angular/material' as mat;
+
+// Customize the entire app. Change :root to your selector if you want to scope the styles.
+:root {
+  @include mat.select-overrides((
+    panel-background-color: #8d908c,
+  ));
+
+  @include mat.form-field-overrides((
+    filled-container-color: #a0be90,
+    filled-focus-label-text-color: #2b3028,
+    filled-container-shape: 5px,
+  ));
+}

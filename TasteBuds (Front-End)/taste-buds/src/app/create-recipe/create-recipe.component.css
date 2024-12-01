@@ -1,0 +1,160 @@
+.background {
+    position: absolute;
+    top: 0;
+    height: 90%;
+    width: 100%;
+    background-color: #282828;
+    color:white;
+    display: inline-block;
+    column-gap: 10%;
+    overflow-x: hidden;
+    overflow-y: visible;
+    scroll-behavior: smooth;
+}
+
+.recipe {
+    position: relative;
+    height: 20%;
+    width: 80%;
+    color: black;
+    background-color: #89ae75;
+    top: 5%;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    user-select: none;
+    text-align: center;
+    align-content: center;
+    font-family: 'Inter', sans-serif;
+    border-radius: 1em;
+    opacity: 70%;
+    cursor: pointer;
+}
+
+.ingredients-screen {
+    visibility: hidden;
+    position: fixed;
+    background-color: #161b13;
+    height: 75%;
+    width: 90%;
+    top: 5%;
+    left: 5%;
+    align-content: center;
+    text-align: center;
+    border-radius: 2em;
+    opacity: 99%;
+    z-index: 8;
+    overflow-y: auto;
+}
+
+.back {
+    visibility: hidden;
+    position: fixed;
+    top: 10%;
+    left: 10%;
+    width: 5%;
+    height: 5%;
+    color:#a0be90;
+    z-index: 9;
+}
+
+.bk-button {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.bk-button :hover {
+    color: #5a8f41;
+    cursor: pointer;;
+}
+
+.ingredient-list {
+    height: 70%;
+    text-align: left;
+    margin-top: 15%;
+    align-content: top;
+}
+
+.ingredient-item {
+    position: relative;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    margin: 10%;
+}
+
+.ingredients-bar {
+    position: fixed;
+    top: 5%;
+    height: 12%;
+    width: 90%;
+    border-top-left-radius: 2em;
+    border-top-right-radius: 2em;
+    z-index: 9;
+    background-color: #121212;
+    user-select: none;
+}
+
+.h5 {
+    margin: 2%;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    color: #a0be90;
+}
+
+.dietary-icon {
+    height: 50%;
+    width: 100%;
+    align-content: center;
+    display: flex;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.food-icon {
+    margin-left: 10%;
+    margin-right: 10%;
+    color: red;
+}
+
+.icon-container {
+    /* background-color: yellowgreen; */
+    width: 30%;
+    height: 110%;
+    display: grid;
+    margin: auto;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+}
+
+.btn-dark {
+    background-color: #3f3f3f !important;
+    outline-style: none !important;
+}
+
+.filter-container {
+    height: 7%;
+    width: 100%;
+    margin-top: 10%;
+    text-align: center;
+}
+
+.filter-button {
+    position: relative;
+    height: 100%;
+    width: 40%;
+    text-align: center;
+    margin: auto;
+    margin-top: -4%;    
+    margin-left: 3%;
+    border-radius: 5em;
+}
+
+.filter-icon {
+    position: relative;
+    margin-left: 40%;
+}
+
+.filter-select {
+    color: #3f3f3f !important;
+}

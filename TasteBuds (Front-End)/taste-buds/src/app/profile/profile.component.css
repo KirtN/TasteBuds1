@@ -1,0 +1,89 @@
+.background {
+    position: absolute;
+    top: 0;
+    height: 90%;
+    width: 100%;
+    overflow-y: hidden;
+    background-color: #282828;
+}
+
+.welcome {
+    position: absolute;
+    visibility: hidden;
+    top: 0;
+    height: 30%;
+    width: 100%;
+    font-size: 32px;
+    font-family: 'Inter', sans-serif;
+    color: #a0be90;
+    margin: auto;
+    text-align: center;
+    align-content: center;
+}
+
+.login {
+    position: absolute;
+    visibility: visible;
+    background-color: lightblue;
+    width: 90%;
+    height: 90%;
+    top: 5%;
+    left: 5%;
+    align-content: center;
+    text-align: center;
+    border-radius: 2em;
+    background-color: #5a5e58;
+}
+
+.register {
+    position: absolute;
+    visibility: hidden;
+    width: 90%;
+    height: 90%;
+    top: 5%;
+    left: 5%;
+    align-content: center;
+    text-align: center;
+    border-radius: 2em;
+    background-color: #5a5e58;
+}
+
+.form-control {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 5%;
+}
+
+.btn {
+    margin-left: 10%;
+}
+
+.incorrect {
+    visibility: hidden;
+    background-color: rgb(240, 91, 91);
+    width: 80%;
+    margin: auto;
+    margin-bottom: 10%;
+    border-radius: 2em;
+    color:black
+}
+
+.back {
+    position: inherit;
+    top: 3%;
+    left: 3%;
+    width: 5%;
+    height: 5%;
+    color:#a0be90;
+}
+
+.bk-button {
+    position: inherit;
+    width: 100%;
+    height: 100%;
+}
+
+.bk-button :hover {
+    color: #5a8f41;
+    cursor: pointer;;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="create-recipe.component.css">
+<link rel="stylesheet" href="create-recipe.component.scss">
+<div class="background" id="background">
+    <div class="filter-container">
+        <mat-form-field class="multiselect-field">
+            <mat-label>Ingredients</mat-label>
+            <mat-select [formControl]="ingredientForm" multiple>
+                <!-- <mat-option (click)="selectAll()">Select All</mat-option> -->
+                @for (ingredient of ingredientList; track ingredient) {
+                <mat-option [value]="ingredient">{{ingredient}}</mat-option>
+                }
+            </mat-select>
+        </mat-form-field>
+
+        <button class="btn btn-dark filter-button" (click)="openFilterMenu()">
+            Filter
+            <span class="material-icons filter-icon">filter_list</span>
+        </button>
+    </div>
+    <div class="ingredients-screen" id="ingredientsPane">
+        <div class="ingredients-bar">
+            <div class="back" id="backButton">
+                <div class="bk-button" (click)="closeIngredientsList()">
+                    <span class="material-icons">arrow_back_ios</span>
+                </div>
+            </div>
+            <p class="h5" id="recipeName"></p>
+            <div class="dietary-icon">
+                <div class="icon-container">
+                    <span class="material-icons food-icon" id="veganIcon">local_dining</span>
+                    Vegan
+                </div>
+                <div class="icon-container">
+                    <span class="material-icons food-icon" id="vegetarianIcon">grass</span>
+                    Vegetarian
+                </div>
+                <div class="icon-container">
+                    <span class="material-icons food-icon" id="glutenFreeIcon">takeout_dining</span>
+                    Gluten Free
+                </div>
+            </div>
+        </div>
+        <ul class="ingredient-list" id="ingredientList"></ul>
+    </div>
+</div>
