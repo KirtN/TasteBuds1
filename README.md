@@ -4,9 +4,12 @@
 TasteBuds is a user-friendly application designed to help students and busy individuals decide what to cook with the ingredients they have. It simplifies meal planning by providing recipe suggestions and generating shopping lists for selected dishes.
 ### Features
 * **Ingredient-Based Recipes**: Suggests recipes based on the ingredients you input.
-* **Shopping List Generator:** Creates a shopping list for missing ingredients.
+* **Pantry Storage:** Stores user's ingredients with the ability to update.
 * **Easy Navigation:** User-friendly design for quick access to recipes.
-* **Recipe Details:** Provides cooking instructions, prep time, and nutritional information.
+* **Recipe Details:** Provides nutritional information, and ingredient lists.
+### Features in progress
+* **Pantry Addition:** Allows users to add new ingredients to their pantry
+* **Shopping Cart:** Allow users to automatically add missing ingredients to their shopping cart
 
 ## Setting up the Project
 ### There are multiple steps in setting this project up. Please read through each step carefully and we'll get started together!  
