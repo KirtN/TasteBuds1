@@ -53,12 +53,17 @@
     align-content: center;
 }
 
+.top-bar {
+    display: flex;
+}
+
 .update-button {
+    width: 70%;
     text-align: center;
 }
 
 .btn-dark {
-    width: 45%;
+    width: 80%;
     font-family: 'Inter', sans-serif;
     background-color: #3f3f3f !important;
     outline-style: none !important;
@@ -66,4 +71,100 @@
 
 .update-icon {
     padding-left: 10%;
+}
+
+.add-container {
+    width: 30%;
+    text-align: center;
+}
+
+.add-button {
+    width:50%;
+}
+
+.add-item-container {
+    visibility: hidden;
+    position: fixed;
+    height: 55%;
+    width: 90%;
+    top: 5%;
+    left: 5%;
+    background-color: #3f3f3f;
+    opacity: 99%;
+    border-radius: 2em;
+    text-align: center;
+}
+
+.back {
+    position: fixed;
+    top: 8%;
+    left: 10%;
+    width: 5%;
+    height: 5%;
+    color:#a0be90;
+    z-index: 9;
+}
+
+.bk-button {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.bk-button :hover {
+    color: #5a8f41;
+    cursor: pointer;;
+}
+
+.ingredient-form {
+    width: 80%;
+    height: 70%;
+    margin: auto;
+    margin-top: 20%;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    color: #a0be90;
+    align-content: top;
+}
+
+.form-control {
+    margin-top: 10%;
+    background-color: #a0be90;
+}
+
+.check-group {
+    height: 30%;
+    width: 100%;
+    margin-top: 5%;
+    font-size: 16px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.checkbox-label {
+    height: 40%;
+    width: 33%;
+    margin-bottom: 0%;
+    text-align: left;
+    padding: 1%;
+}
+
+.checkbox-box {
+    height: 30%;
+    width: 33%;
+    margin-top: -17%;
+    align-content: center;
+}
+
+.form-check {
+    margin-left: 30%;
+    width: 15%;
+}
+
+.add-ingredient-button {
+    margin: auto;
+    margin-top: 4%;
+    background-color: #575757 !important;
 }

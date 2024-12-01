@@ -85,7 +85,13 @@ app.MapGet("/ingredient/{id}", async (int id, IngredientsDB db) =>
         is Ingredients ingredient
             ? Results.Ok(ingredient)
             : Results.NotFound());
+app.MapPost("/ingredient", async (Ingredients ingredient, IngredientsDB db) =>
+{
+    db.Ingredient.Add(ingredient);
+    await db.SaveChangesAsync();
 
+    return Results.Created($"/ingredient/{ingredient.Ingredient_id}", ingredient);
+});
 
 
 //GET_POST_DELETE for RECIPE_ING_JUNCTION
@@ -231,12 +237,12 @@ app.MapGet("/Pantry/{id}", async (int id, PantryDB db) =>
             ? Results.Ok(Pantry)
             : Results.NotFound());
 
-app.MapPost("/Pantry", async ([AsParameters] Pantry Pantry, PantryDB db) =>
+app.MapPost("/Pantry", async ([AsParameters] Pantry pantry, PantryDB db) =>
 {
-    db.Pantry.Add(Pantry);
+    db.Pantry.Add(pantry);
     await db.SaveChangesAsync();
 
-    return Results.Created($"/Pantry/{Pantry.User_id}", Pantry);
+    return Results.NoContent();
 });
 
 app.MapDelete("/Pantry/{id}", async (int id, PantryDB db) =>
@@ -254,9 +260,13 @@ app.MapDelete("/Pantry/{id}", async (int id, PantryDB db) =>
 app.MapPut("/pantry", async ([AsParameters] Pantry newPantry, PantryDB db) =>
 {
     var pantry = await db.Pantry.FindAsync(newPantry.User_id, newPantry.Ingredient_id);
+    Console.WriteLine("User_id: " + newPantry.User_id);
+    Console.WriteLine("Ingredient_id: " + newPantry.Ingredient_id);
 
-    if (pantry is null) return Results.NotFound();
-
+    if (pantry is null)
+    {
+        return Results.NotFound();
+    }
     pantry.Quantity = newPantry.Quantity;
 
     await db.SaveChangesAsync();

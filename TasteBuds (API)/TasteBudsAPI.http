@@ -38,8 +38,16 @@ GET {{TasteBudsAPI_HostAddress}}/Pantry
 
 @user_id=1
 @ingredient_id=2
-@quantity=100
+@quantity=500
 @measurement='ml'
 PUT {{TasteBudsAPI_HostAddress}}/pantry?user_id={{user_id}}&ingredient_id={{ingredient_id}}&quantity={{quantity}}&measurement={{measurement}}
+
+###
+
+# @user_id=1
+# @ingredient_id=39
+# @quantity=12
+# @measurement='ml'
+POST {{TasteBudsAPI_HostAddress}}/Pantry?User_id={{user_id}}&Ingredient_id={{ingredient_id}}&Quantity={{quantity}}&Measurement={{measurement}}
 
 ###

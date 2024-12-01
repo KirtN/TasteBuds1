@@ -16,12 +16,11 @@ CREATE TABLE [User] (
 );
 
 CREATE TABLE Ingredient (
-    Ingredient_id int NOT NULL,
+    Ingredient_id int IDENTITY(1,1) PRIMARY KEY,
     Ingredient_name varchar(50) NOT NULL,
     Is_Vegan tinyint NOT NULL,
 	Is_Vegetarian tinyint NOT NULL,
 	Is_GlutenFree tinyint NOT NULL,
-    PRIMARY KEY (Ingredient_id)
 );
 
 CREATE TABLE Recipe (
@@ -85,50 +84,50 @@ VALUES
 	('PreetPatel', 'Preet', 'Patel', '123456', 'ppatel2@unbc.ca');
 
 -- Insert Ingredient
-INSERT INTO Ingredient (Ingredient_id, Ingredient_name, Is_Vegan, Is_Vegetarian, Is_GlutenFree)
+INSERT INTO Ingredient (Ingredient_name, Is_Vegan, Is_Vegetarian, Is_GlutenFree)
 VALUES
-	(1, 'Chicken Drumsticks', 0, 0, 1),
-	(2, 'Hot Pepper Sauce', 0, 0, 1),
-	(3, 'Vegetable Oil', 1, 1, 1),
-	(4, 'All-Purpose Flour', 1, 1, 0),
-	(5, 'Yellow Cornmeal', 1, 1, 0),
-	(6, 'Salt', 1, 1, 1),
+	('Chicken Drumsticks', 0, 0, 1),
+	('Hot Pepper Sauce', 0, 0, 1),
+	('Vegetable Oil', 1, 1, 1),
+	('All-Purpose Flour', 1, 1, 0),
+	('Yellow Cornmeal', 1, 1, 0),
+	('Salt', 1, 1, 1),
 
-	(7, 'Linguine Pasta', 1, 1, 0),
-	(8, 'Butter', 0, 0, 1),
-	(9, 'Onion', 1, 1, 1),
-	(10, 'Garlic', 1, 1, 1),
-	(11, 'Shrimp', 0, 0, 1),
-	(12, 'Half-and-Half Cream', 0, 0, 1),
-	(13, 'Black Pepper', 1, 1, 1),
-	(14, 'Parmesan Cheese', 0, 0, 1),
-	(15, 'Parsley', 1, 1, 1),
-	(16, 'Lemon', 1, 1, 1),
+	('Linguine Pasta', 1, 1, 0),
+	('Butter', 0, 0, 1),
+	('Onion', 1, 1, 1),
+	('Garlic', 1, 1, 1),
+	('Shrimp', 0, 0, 1),
+	('Half-and-Half Cream', 0, 0, 1),
+	('Black Pepper', 1, 1, 1),
+	('Parmesan Cheese', 0, 0, 1),
+	('Parsley', 1, 1, 1),
+	('Lemon', 1, 1, 1),
 
-	(17, 'Spaghetti Pasta', 1, 1, 0),       
-    (18, 'Tomato Sauce', 1, 1, 1),             
-    (19, 'Olive Oil', 1, 1, 1),                                 
-    (23, 'Basil', 1, 1, 1),
+	('Spaghetti Pasta', 1, 1, 0),       
+    ('Tomato Sauce', 1, 1, 1),             
+    ('Olive Oil', 1, 1, 1),                                 
+    ('Basil', 1, 1, 1),
 
-	(24, 'Ground Beef Patty', 0, 0, 1),         -- Beef patty, not vegan or vegetarian but gluten-free
-    (25, 'Burger Bun', 0, 1, 0),                  -- Regular bun, not gluten-free
-    (26, 'Cheddar Cheese', 0, 1, 1),            -- Cheese slice, not vegan but vegetarian and gluten-free
-    (27, 'Lettuce', 1, 1, 1),                    -- Lettuce leaf, suitable for all dietary preferences
-    (28, 'Tomato Slice', 1, 1, 1),              -- Tomato slice
-    (29, 'Pickles', 1, 1, 1),                  -- Pickles for extra flavor
-    (30, 'Ketchup', 1, 1, 1),                     -- Ketchup
-    (31, 'Mustard', 1, 1, 1),                     -- Mustard
+	('Ground Beef Patty', 0, 0, 1),         -- Beef patty, not vegan or vegetarian but gluten-free
+    ('Burger Bun', 0, 1, 0),                  -- Regular bun, not gluten-free
+    ('Cheddar Cheese', 0, 1, 1),            -- Cheese slice, not vegan but vegetarian and gluten-free
+    ('Lettuce', 1, 1, 1),                    -- Lettuce leaf, suitable for all dietary preferences
+    ('Tomato Slice', 1, 1, 1),              -- Tomato slice
+    ('Pickles', 1, 1, 1),                  -- Pickles for extra flavor
+    ('Ketchup', 1, 1, 1),                     -- Ketchup
+    ('Mustard', 1, 1, 1),                     -- Mustard
 
-	(32, 'Large Eggs', 0, 0, 1),
-	(33, 'Grated Cheese', 0, 1, 1),
-	(34, 'Cherry Tomatoes', 1, 1, 1),
-	(35, 'Chopped Basil', 1, 1, 1),
+	('Large Eggs', 0, 0, 1),
+	('Grated Cheese', 0, 1, 1),
+	('Cherry Tomatoes', 1, 1, 1),
+	('Chopped Basil', 1, 1, 1),
 
-	(36, 'Blanched silver almonds', 1, 1, 1),
-	(37, 'Mayonnaise', 1, 1, 1),
-	(38, 'Lemon Juice', 1, 1, 1),
-	(39, 'Chopped Chicken', 0, 0, 1),
-	(40, 'Celery Stalks', 1, 1, 1);
+	('Blanched silver almonds', 1, 1, 1),
+	('Mayonnaise', 1, 1, 1),
+	('Lemon Juice', 1, 1, 1),
+	('Chopped Chicken', 0, 0, 1),
+	('Celery Stalks', 1, 1, 1);
 
 -- Insert Recipe
 INSERT INTO Recipe (Recipe_id, Recipe_name, Recipe_link, Cook_time, Is_Vegan, Is_Vegetarian, Is_GlutenFree, Nutritional_facts, Portion_size)
@@ -180,32 +179,32 @@ VALUES
 	(3, 10, 3, 'cloves'),
 	(3, 6, 10, 'grams'),
 	(3, 13, 5, 'grams'),
-	(3, 23, 5, 'grams'),
+	(3, 20, 5, 'grams'),
 
-	(4, 24, 1, 'patty'),
-	(4, 25, 5, 'buns'),
-	(4, 26, 5, 'slices'),
-	(4, 27, 5, 'leaf'),
-	(4, 28, 1, 'slices'),
-	(4, 29, 3, 'slices'),
-	(4, 30, 15, 'ml'),
-	(4, 31, 10, 'ml'),
+	(4, 21, 1, 'patty'),
+	(4, 22, 5, 'buns'),
+	(4, 23, 5, 'slices'),
+	(4, 24, 5, 'leaf'),
+	(4, 25, 1, 'slices'),
+	(4, 26, 3, 'slices'),
+	(4, 27, 15, 'ml'),
+	(4, 28, 10, 'ml'),
 	(4, 6, 2, 'grams'),
 	(4, 13, 1, 'grams'),
 
-	(5, 32, 2, 'pcs'),
+	(5, 29, 2, 'pcs'),
 	(5, 6, 0.25, 'tsp'),
 	(5, 8, 1, 'tbsp'),
-	(5, 33, 2, 'tbsp'),
-	(5, 34, 4, 'pcs'),
-	(5, 35, 2, 'tbsp'),
+	(5, 30, 2, 'tbsp'),
+	(5, 31, 4, 'pcs'),
+	(5, 32, 2, 'tbsp'),
 
-	(6, 36, 2, 'cups'),
-	(6, 37, 2, 'cups'),
-	(6, 38, 4, 'tbsp'),
+	(6, 33, 2, 'cups'),
+	(6, 34, 2, 'cups'),
+	(6, 35, 4, 'tbsp'),
 	(6, 13, 1, 'tsp'),
-	(6, 39, 1, 'cups'),
-	(6, 40, 4, 'pcs');
+	(6, 36, 1, 'cups'),
+	(6, 37, 4, 'pcs');
 
 INSERT INTO Pantry ([User_id], Ingredient_id, Quantity, Measurement)
 VALUES
@@ -219,5 +218,5 @@ VALUES
 	(1, 8, 4, 'cups'),
 	(1, 9, 3, 'pcs'),
 	(1, 10, 4, 'pcs'),
-	(1, 39, 750, 'g'),
-	(1, 40, 5, 'pcs');
+	(1, 36, 750, 'g'),
+	(1, 37, 5, 'pcs');

@@ -1,11 +1,53 @@
 <!DOCTYPE html>
 <link rel="stylesheet" href="pantry.component.css">
 <div class="background">
-    <div class="update-button">
-        <button id="updateButton" class="btn btn-dark" (click)="updatePantry()" disabled>
-            Update Pantry
-            <span class="material-icons update-icon">add_task</span>
-        </button>
+    <div class="top-bar">
+        <div class="update-button">
+            <button id="updateButton" class="btn btn-dark" (click)="updatePantry()" disabled>
+                Update Pantry
+                <span class="material-icons update-icon">add_task</span>
+            </button>
+        </div>
+        <div class="add-container">
+            <button id="addButton" class="btn btn-dark add-button" (click)="addItem()">
+                <span class="material-icons add-icon">add</span>
+            </button>
+        </div>
     </div>
     <div class="pantry-item-container" id="pantryContainer"></div>
+    <div class="add-item-container" id="addScreen">
+        <div class="back" id="backButton">
+            <div class="bk-button" (click)="closeAddScreen()">
+                <span class="material-icons">arrow_back_ios</span>
+            </div>
+        </div>
+
+        <form class="ingredient-form">
+            Add Ingredient to Pantry
+            <div class="formgroup">
+                <input type="text" class="form-control" id="ingredientName" placeholder="Ingredient Name (eg. Carrot)" (keyup.enter)="addIngredient()">
+            </div>
+            <div class="formgroup">
+                <input type="number" class="form-control" id="ingredientQuantity" placeholder="Quantity (eg. 5)" (keyup.enter)="addIngredient()">
+            </div>
+            <div class="formgroup">
+                <input type="email" class="form-control" id="ingredientMeasurement" placeholder="Measurement (eg. pcs)" (keyup.enter)="addIngredient()">
+            </div>
+            <div class="formgroup check-group">
+                <div class="checkbox-label">Vegan</div>
+                <div class="checkbox-label">Vegetarian</div>
+                <div class="checkbox-label">Gluten Free</div>
+                <div class="checkbox-box">
+                    <input type="checkbox" class="form-check" id="isVeganBox">
+                </div>
+                <div class="checkbox-box">
+                    <input type="checkbox" class="form-check" id="isVegetarianBox">
+                </div>
+                <div class="checkbox-box">
+                    <input type="checkbox" class="form-check" id="isGlutenFreeBox">
+                </div>
+            </div>
+        </form>
+        <button class="btn btn-dark add-ingredient-button" (click)="addIngredient()">Add Ingredient</button>
+    </div>
 </div>

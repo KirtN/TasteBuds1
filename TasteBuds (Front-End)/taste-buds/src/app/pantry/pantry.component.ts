@@ -143,4 +143,76 @@ export class PantryComponent implements OnInit {
     const button: HTMLElement = document.getElementById("updateButton") as HTMLElement;
     button.removeAttribute("disabled");
   }
+  
+  addItem() {
+    const screen: HTMLElement = document.getElementById("addScreen") as HTMLElement;
+    screen.setAttribute("style", "visibility:visible");
+  }
+  
+  closeAddScreen() {
+    const screen: HTMLElement = document.getElementById("addScreen") as HTMLElement;
+    const ingredientName: HTMLInputElement = document.getElementById("ingredientName") as HTMLInputElement;
+    const ingredientQuantity: HTMLInputElement = document.getElementById("ingredientQuantity") as HTMLInputElement;
+    const ingredientMeasurement: HTMLInputElement = document.getElementById("ingredientMeasurement") as HTMLInputElement;
+
+    ingredientName.value = "";
+    ingredientQuantity.value = "";
+    ingredientMeasurement.value = "";
+    screen.setAttribute("style", "visibility:hidden");
+  }
+  
+  addIngredient() {
+    const ingredientName: HTMLInputElement = document.getElementById("ingredientName") as HTMLInputElement;
+    const ingredientQuantity: HTMLInputElement = document.getElementById("ingredientQuantity") as HTMLInputElement;
+    const ingredientMeasurement: HTMLInputElement = document.getElementById("ingredientMeasurement") as HTMLInputElement;
+    const isVeganBox: HTMLInputElement = document.getElementById("isVeganBox") as HTMLInputElement;
+    const isVegetarianBox: HTMLInputElement = document.getElementById("isVegetarianBox") as HTMLInputElement;
+    const isGlutenFreeBox: HTMLInputElement = document.getElementById("isGlutenFreeBox") as HTMLInputElement;
+
+    let user_id = parseFloat(JSON.parse(sessionStorage.getItem("user")!).user_id);
+    let ingredient_name = ingredientName.value;
+    let quantity = parseFloat(ingredientQuantity.value);
+    let measurement = ingredientMeasurement.value;
+    let isVegan = isVeganBox.checked? 1 : 0;
+    let isVegetarian = isVegetarianBox.checked? 1 : 0;
+    let isGlutenFree = isGlutenFreeBox.checked? 1 : 0;
+    if(ingredient_name == "" || Number.isNaN(quantity) || measurement == "") {
+      console.log("error");
+      return;
+    }
+
+    // POST request for new ingredient
+    const headers: Headers = new Headers()
+    headers.set('Content-Type', 'application/json')
+    headers.set('Accept', 'application/json')
+    fetch(`${this.PROTOCOL}://${this.LOCAL_IP}:${this.LOCAL_PORT}/ingredient`, {
+      method: 'POST',
+      headers: headers,
+      body: JSON.stringify({
+        Ingredient_name: ingredient_name,
+        Is_Vegan: isVegan,
+        Is_Vegetarian: isVegetarian,
+        Is_GlutenFree: isGlutenFree, 
+      })
+    })
+    .then((response) => response.json())
+    .then((ingredient) => {
+
+      console.log(user_id + " " + ingredient.ingredient_id + " " + quantity + " " + measurement);
+      let ingredient_ids = JSON.parse(sessionStorage.getItem("ingredient_ids")!);
+      ingredient_ids.push(ingredient.ingredient_id);
+      sessionStorage.setItem("ingredient_ids", JSON.stringify(ingredient_ids));
+      // POST request for new pantry item
+      fetch(`${this.PROTOCOL}://${this.LOCAL_IP}:${this.LOCAL_PORT}/pantry?user_id=${user_id}&ingredient_id=${ingredient.ingredient_id}&quantity=${quantity}&measurement=${measurement}`, {
+        method: 'POST',
+        headers: headers,
+      })
+      .then(() => {
+          this.loadPantry();
+      })
+    });
+    // Close window
+    this.closeAddScreen();
+  }
+
 }
