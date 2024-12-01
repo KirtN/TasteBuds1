@@ -4,11 +4,11 @@
 TasteBuds is a user-friendly application designed to help students and busy individuals decide what to cook with the ingredients they have. It simplifies meal planning by providing recipe suggestions and generating shopping lists for selected dishes.
 ### Features
 * **Ingredient-Based Recipes**: Suggests recipes based on the ingredients you input.
-* **Pantry Storage:** Stores user's ingredients with the ability to update.
+* **Pantry Storage:** Stores user's ingredients with the ability to update and add items.
 * **Easy Navigation:** User-friendly design for quick access to recipes.
 * **Recipe Details:** Provides nutritional information, and ingredient lists.
 ### Features in progress
-* **Pantry Addition:** Allows users to add new ingredients to their pantry
+* **Recipe Information:** Adding more information for recipes such as portion size and cook time
 * **Shopping Cart:** Allow users to automatically add missing ingredients to their shopping cart
 
 ## Setting up the Project
@@ -119,7 +119,7 @@ An example is shown below:
 Username: `TestUser`  
 Password: `password`  
   
-Feel free to create your own account, however please note that the pantry feature does not yet allow users to add items. This limits the functionality for new users.  
+Feel free to create your own account and test it out as well! However, you will have to add your own pantry ingredients.
 
 ## Deployment to Android
 
@@ -133,9 +133,13 @@ npx cap sync
 npx cap run android
 ```
 ## App Showcase
-Login Screen | Register Screen | Profile Screen | Pantry Screen
---- | --- | --- | ---
-<img src="./assets/LoginScreen.png" width="200"> | <img src="./assets/RegisterScreen.png" width="200"> | <img src="./assets/ProfileScreen.png" width="200"> | <img src="./assets/PantryScreen.png" width="200">
+Login Screen | Register Screen | Profile Screen
+--- | --- | ---
+<img src="./assets/LoginScreen.png" width="200"> | <img src="./assets/RegisterScreen.png" width="200"> | <img src="./assets/ProfileScreen.png" width="200">
+
+Pantry Screen | Add Pantry Item Screen
+--- | ---
+<img src="./assets/PantryScreen.png" width="200"> |  <img src="./assets/AddPantryItemScreen.png" width="200">
 
 Recipes Screen | Recipe Info Screen | Filter Dropdown | Filtered Recipes
 --- | --- | --- | ---
