@@ -24,17 +24,22 @@ TasteBuds is a user-friendly application designed to help students and busy indi
 
 ### Step 1: Install and Set Up SQL Server Management Studio (SSMS)
 
-To manage the SQL Server database, you will need to install SQL Server Management Studio (SSMS), a powerful tool for querying, designing, and administering yoru database.
+To manage the SQL Server database, you will need to install SQL Server Management Studio (SSMS) and SQL Server, a powerful tool for querying, designing, and administering yoru database.
 
-1. Visit the official [SQL Server Management Studio (SSMS) download page](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms).
-2. Click on **Download SSMS** and follow the installation prompts to install SSMS on your computer.
-3. After installation is complete, launch SSMS.
+1. Visit Microsoft's [SQL Server download page](https://www.microsoft.com/en-ca/sql-server/sql-server-downloads) and click **Download now** underneath **Developer**
+2. After installation is complete, launch **SQL Server**.
+3. You should see a **Select Installation Type** page. Select **Basic**
+4. Accept the terms and click install. You may need to restart your computer.
+
+5. Visit the official [SQL Server Management Studio (SSMS) download page](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms).
+6. Click on **Download SSMS** and follow the installation prompts to install SSMS on your computer.
 
 ### Step 2: Connect to the Local Server
 
-1. In the **Connect to Server** window, type **.** (period) in the **Server name** field to connect to your local SQL Server instance.
-2. Choose **Windows Authentication** as the authentication method (default option) if you're using your Windows credentials to connect.
-3. Click **Connect**.
+1. Run SSMS as Administrator
+2. In the **Connect to Server** window, type **.** (period) in the **Server name** field to connect to your local SQL Server instance.
+3. Choose **Windows Authentication** as the authentication method (default option) if you're using your Windows credentials to connect.
+4. Click **Connect**.
 
 ### Step 3: Create the local database and assign a user
 
@@ -51,7 +56,7 @@ To manage the SQL Server database, you will need to install SQL Server Managemen
 
 ### Step 4: Reconnect to the database as TestUser
 
-1. Right click **. (SQL Server...)** and click **Disconnect**
+1. Right click **. (SQL Server...)** in the Object Explorer and click **Disconnect**
 2. Click **Connect** and select **Database Engine...** The **Connect to Server** window should pop up again.
 3. This time, enter the login details for **TestUser**. The Login is **TestUser** and Password is **passwd** the settings should match the picture below.
 
