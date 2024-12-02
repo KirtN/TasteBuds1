@@ -100,7 +100,7 @@ To begin development of the Recipe Suggestion App, you will need to install **Vi
 
 <img src="./assets/VisualStudioStart.png" width="400">
 
-2. Press **F5** to start hosting the API locally (`https://localhost:7067`). You should see **This localhost page can't be found**. That is okay! This is a minimal API, so there are no front-end components for it. If you want to test it out, you can go to `https://localhost:7067/recipe`. A JSON object of recipes in our database should show up here.
+2. Once the project is loaded, press **F5** to build the project and start hosting the API locally (`https://localhost:7067`). You should see **This localhost page can't be found**. That is okay! This is a minimal API, so there are no front-end components for it. If you want to test it out, you can go to `https://localhost:7067/recipe`. A JSON object of recipes in our database should show up here.
 
 <img src="./assets/APIPage.png" width="400">
 
@@ -112,9 +112,10 @@ To begin development of the Recipe Suggestion App, you will need to install **Vi
 
 This project was created using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.2.
 
-1. Packages were installed with `Node v20.17.0` and `npm v10.9.0` which can be installed from [NodeJS.org](https://nodejs.org/en/download/prebuilt-installer)
+1. Packages were installed with `Node v20.17.0` and `npm v10.9.0` which can be downloaded from [NodeJS.org](https://nodejs.org/en/download/prebuilt-installer)
+2. Install Node.js through the installer with the default settings. Click **Finish** when complete.
 
-2. Install the required packages for the project with
+3. Navigate to the front-end project folder located in `TasteBuds\TasteBuds (Front-End)\taste-buds`. Install the required packages for the project with
 
 ```bash
 npm install
