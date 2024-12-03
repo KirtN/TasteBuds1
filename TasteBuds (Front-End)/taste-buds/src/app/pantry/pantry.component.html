@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
 <link rel="stylesheet" href="pantry.component.css">
 <div class="background">
     <div class="top-bar">
@@ -28,10 +30,10 @@
                 <input type="text" class="form-control" id="ingredientName" placeholder="Ingredient Name (eg. Carrot)" (keyup.enter)="addIngredient()">
             </div>
             <div class="formgroup">
-                <input type="number" class="form-control" id="ingredientQuantity" placeholder="Quantity (eg. 5)" (keyup.enter)="addIngredient()">
+                <input type="number" class="form-control" id="ingredientQuantity" placeholder="Quantity (eg. 5)" onkeydown="return /[a-z,0,1,2,3,4,5,6,7,8,9]/i.test(event.key)" (keyup.enter)="addIngredient()">
             </div>
             <div class="formgroup">
-                <input type="email" class="form-control" id="ingredientMeasurement" placeholder="Measurement (eg. pcs)" (keyup.enter)="addIngredient()">
+                <input type="text" class="form-control" id="ingredientMeasurement" placeholder="Measurement (eg. pcs)" onkeydown="return /[a-z]/i.test(event.key)" (keyup.enter)="addIngredient()">
             </div>
             <div class="formgroup check-group">
                 <div class="checkbox-label">Vegan</div>

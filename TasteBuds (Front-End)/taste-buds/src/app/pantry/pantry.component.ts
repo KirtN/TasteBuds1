@@ -73,6 +73,7 @@ export class PantryComponent implements OnInit {
 
           let quantity = document.createElement('input');
           quantity.classList.add("ingredient-quantity");
+          quantity.setAttribute("onkeydown", "return /[a-z,0,1,2,3,4,5,6,7,8,9]/i.test(event.key)");
           quantity.setAttribute("type","number");
           quantity.setAttribute("id", "quantity" + i)
           quantity.onkeyup = (e) => {
